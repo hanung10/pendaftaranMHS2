@@ -41,10 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", e => {
       e.preventDefault();
       const data = {
+        jalur: document.getElementById("jalur").value,
+        prodi: document.getElementById("prodi").value,
         nama: document.getElementById("nama").value,
         email: document.getElementById("email").value,
         telepon: document.getElementById("telepon").value,
-        prodi: document.getElementById("prodi").value
+      sekolah: document.getElementById("sekolah").value
       };
       const tx = db.transaction("pendaftar", "readwrite");
       tx.objectStore("pendaftar").add(data);
@@ -73,8 +75,8 @@ function tampilkanPendaftar() {
   reqCursor.onsuccess = e => {
     const cursor = e.target.result;
     if (cursor) {
-      const { nama, email, telepon, prodi } = cursor.value;
-      const row = `<tr><td>${nama}</td><td>${email}</td><td>${telepon}</td><td>${prodi}</td></tr>`;
+      const { jalur, prodi, nama, email, telepon, sekolah } = cursor.value;
+      const row = `<tr><td>${jalur}</td><td>${prodi}</td><td>${nama}</td><td>${email}</td><td>${telepon}</td><td>${sekolah}</td></tr>`;
       tbody.insertAdjacentHTML("beforeend", row);
       cursor.continue();
     }
