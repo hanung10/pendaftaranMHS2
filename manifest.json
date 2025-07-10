@@ -1,67 +1,37 @@
 {
   "name": "Portal Pendaftaran Mahasiswa", 
-  // Nama lengkap aplikasi yang ditampilkan
-
   "short_name": "Pendaftaran", 
-  // Nama singkat yang ditampilkan di layar utama
-
   "start_url": "index.html", 
-  // URL awal sebagai halaman utama
-
   "display": "standalone", 
-  // Mode tampilan aplikasi: standalone
-
   "background_color": "#ffffff", 
-  // Warna latar belakang saat aplikasi sedang loading
-
   "theme_color": "#0d6efd", 
-  // Warna utama tema aplikasi
-
   "orientation": "portrait", 
-  // Orientasi layar default aplikasi saat dibuka (mode potret/tegak)
-
   "icons": [
     {
-      "src": "img/icon.png", 
-      // Path menuju ikon ukuran kecil (192x192)
+      "src": "img/icon.png",
       "sizes": "192x192", 
-      // Ukuran ikon
       "type": "image/png", 
-      // Format gambar ikon
-      "purpose": "any" 
-      // Dapat digunakan untuk berbagai tujuan (default)
+      "purpose": "any"
     },
     {
       "src": "img/icon2.png", 
-      // Path menuju ikon ukuran besar (512x512)
       "sizes": "512x512", 
-      // Ukuran ikon
-      "type": "image/png", 
-      // Format gambar ikon
+      "type": "image/png",
       "purpose": "any"
     }
   ],
-
   "screenshots": [
     {
       "src": "img/screenshot-mobile.png", 
-      // Path ke tangkapan layar tampilan mobile
       "type": "image/png", 
-      // Format gambar tangkapan layar
       "sizes": "540x720", 
-      // Ukuran gambar tangkapan layar
       "form_factor": "narrow" 
-      // Tangkapan untuk perangkat dengan layar sempit (mobile)
     },
     {
-      "src": "img/screenshot-desktop.png", 
-      // Path ke tangkapan layar tampilan desktop
+      "src": "img/screenshot-desktop.png",
       "type": "image/png", 
-      // Format gambar
       "sizes": "1280x800", 
-      // Ukuran tangkapan layar
-      "form_factor": "wide" 
-      // Tangkapan untuk perangkat dengan layar lebar (desktop)
+      "form_factor": "wide"
     }
   ]
 }
