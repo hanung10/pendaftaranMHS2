@@ -1,15 +1,25 @@
+// Menyimpan API key dari layanan GNews
 const API_KEY = "b01d52bf12334a1f37a46c79cb702e9a";
 
+// Menampilkan berita 
 function tampilkanBerita() {
+  // Mengambil elemen container tempat berita
   const beritaContainer = document.getElementById("beritaContainer");
+
+  // Jika elemen tidak ditemukan, fungsi dihentikan
   if (!beritaContainer) return;
 
+  // Melakukan permintaan fetch ke API GNews
   fetch(`https://gnews.io/api/v4/search?q=teknologi&lang=id&country=id&max=5&apikey=${API_KEY}`)
-    .then(response => response.json())
+    .then(response => response.json()) // Mengubah respon menjadi format JSON
     .then(data => {
+      // Melakukan iterasi pada berita yang diperoleh dari API
       data.articles.forEach(berita => {
+        // Membuat elemen div baru untuk setiap berita
         const card = document.createElement("div");
-        card.className = "card mb-3 shadow-sm";
+        card.className = "card mb-3 shadow-sm"; // Memberikan class Bootstrap
+
+        // Mengatur isi HTML dari elemen card dengan struktur layout berita
         card.innerHTML = `
           <div class="row g-0">
             <div class="col-md-4">
@@ -26,12 +36,16 @@ function tampilkanBerita() {
             </div>
           </div>
         `;
+
+        // Menambahkan card berita ke dalam container
         beritaContainer.appendChild(card);
       });
     })
     .catch(error => {
+      // Jika terjadi error saat mengambil data dari API
       console.error("Gagal mengambil berita:", error);
     });
 }
 
+// Menjalankan fungsi tampilkanBerita setelah seluruh dokumen HTML dimuat
 document.addEventListener("DOMContentLoaded", tampilkanBerita);
