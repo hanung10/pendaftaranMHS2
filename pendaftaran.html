@@ -2,24 +2,38 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir dan Data Pendaftaran</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Formulir dan Data Pendaftaran</title> 
+
+    <!-- Memuat stylesheet Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Memuat file CSS eksternal -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon yang ditampilkan -->
     <link rel="icon" type="image/png" href="img/kampus.png">
+
+    <!-- Memuat file JavaScript -->
     <script src="app.js"></script>
+
+    <!-- JavaScript untuk menampilkan berita dari API -->
     <script src="berita-api.js"></script>
+
+    <!-- Menghubungkan file manifest -->
     <link rel="manifest" href="manifest.json">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"> <!-- Membuat body menggunakan Flexbox dengan tinggi minimum 100% viewport -->
+
+    <!-- Navigasi utama -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand">Pendaftaran Mahasiswa</a>
+            <a class="navbar-brand">Pendaftaran Mahasiswa</a> <!-- Judul brand navbar -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span> <!-- Ikon toggle saat di layar kecil -->
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav"> <!-- Daftar menu navigasi -->
                     <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="pendaftaran.html">Formulir</a></li>
                 </ul>
@@ -27,10 +41,12 @@
         </div>
     </nav>
 
+    <!-- Bagian formulir pendaftaran -->
     <div class="container my-5">
         <h2 class="mb-4">Formulir Pendaftaran Mahasiswa Baru</h2>
         <form id="formPendaftaran">
             <div class="row g-3">
+                <!-- Input untuk memilih jalur pendaftaran -->
                 <div class="col-md-6">
                     <label for="jalur" class="form-label">Jalur Pendaftaran</label>
                     <select class="form-select" id="jalur" required>
@@ -41,6 +57,8 @@
                         <option>Kelas Karyawan</option>
                     </select>
                 </div>
+
+                <!-- Input untuk memilih program studi -->
                 <div class="col-md-6">
                     <label for="prodi" class="form-label">Program Studi</label>
                     <select class="form-select" id="prodi" required>
@@ -50,22 +68,32 @@
                         <option>Teknik Komputer</option>
                     </select>
                 </div>
+
+                <!-- Input untuk nama lengkap -->
                 <div class="col-md-6">
                     <label for="nama" class="form-label">Nama Lengkap</label>
                     <input type="text" class="form-control" id="nama" required>
                 </div>
+
+                <!-- Input untuk email -->
                 <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" required>
                 </div>
+
+                <!-- Input untuk nomor telepon -->
                 <div class="col-md-6">
                     <label for="telepon" class="form-label">No. Telepon</label>
                     <input type="tel" class="form-control" id="telepon" required>
                 </div>
+
+                <!-- Input untuk asal sekolah -->
                 <div class="col-md-6">
                     <label for="sekolah" class="form-label">Asal Sekolah</label>
                     <input type="text" class="form-control" id="sekolah" required>
                 </div>
+
+                <!-- Tombol untuk mengirimkan formulir -->
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Kirim Pendaftaran</button>
                 </div>
@@ -73,6 +101,7 @@
         </form>
     </div>
 
+    <!-- Bagian untuk menampilkan data pendaftar -->
     <div class="container mt-5 mb-5">
         <h2 class="text-center">Data Pendaftar</h2>
         <div class="table-responsive">
@@ -88,22 +117,26 @@
                     </tr>
                 </thead>
                 <tbody id="tabelPendaftar">
-                    </tbody>
+                    <!-- Data akan dimasukkan secara dinamis -->
+                </tbody>
             </table>
         </div>
     </div>
+
+    <!-- Footer halaman -->
     <footer class="bg-dark text-white text-center py-3 mt-5">
         &copy; 2025 Hanung Aryo
     </footer>
 
+    <!-- JavaScript Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Memastikan fungsi untuk menampilkan data dipanggil saat halaman dimuat
+        // Untuk menampilkan data saat halaman dimuat
         window.onload = function() {
-            // Jika Anda memiliki fungsi bernama tampilkanPendaftar di app.js
+            // tampilkanPendaftar di app.js
             if (typeof tampilkanPendaftar === 'function') {
-                tampilkanPendaftar();
+                tampilkanPendaftar(); // Menampilkan data dari penyimpanan lokal atau database
             }
         };
     </script>
