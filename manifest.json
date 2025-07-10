@@ -1,37 +1,67 @@
 {
-  "name": "Portal Pendaftaran Mahasiswa",
-  "short_name": "Pendaftaran",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0d6efd",
-  "orientation": "portrait",
+  "name": "Portal Pendaftaran Mahasiswa", 
+  // Nama lengkap aplikasi yang ditampilkan
+
+  "short_name": "Pendaftaran", 
+  // Nama singkat yang ditampilkan di layar utama
+
+  "start_url": "index.html", 
+  // URL awal sebagai halaman utama
+
+  "display": "standalone", 
+  // Mode tampilan aplikasi: standalone
+
+  "background_color": "#ffffff", 
+  // Warna latar belakang saat aplikasi sedang loading
+
+  "theme_color": "#0d6efd", 
+  // Warna utama tema aplikasi
+
+  "orientation": "portrait", 
+  // Orientasi layar default aplikasi saat dibuka (mode potret/tegak)
+
   "icons": [
     {
-      "src": "img/icon.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
+      "src": "img/icon.png", 
+      // Path menuju ikon ukuran kecil (192x192)
+      "sizes": "192x192", 
+      // Ukuran ikon
+      "type": "image/png", 
+      // Format gambar ikon
+      "purpose": "any" 
+      // Dapat digunakan untuk berbagai tujuan (default)
     },
     {
-      "src": "img/icon2.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "img/icon2.png", 
+      // Path menuju ikon ukuran besar (512x512)
+      "sizes": "512x512", 
+      // Ukuran ikon
+      "type": "image/png", 
+      // Format gambar ikon
       "purpose": "any"
     }
   ],
+
   "screenshots": [
     {
-      "src": "img/screenshot-mobile.png",
-      "type": "image/png",
-      "sizes": "540x720",
-      "form_factor": "narrow"
+      "src": "img/screenshot-mobile.png", 
+      // Path ke tangkapan layar tampilan mobile
+      "type": "image/png", 
+      // Format gambar tangkapan layar
+      "sizes": "540x720", 
+      // Ukuran gambar tangkapan layar
+      "form_factor": "narrow" 
+      // Tangkapan untuk perangkat dengan layar sempit (mobile)
     },
     {
-      "src": "img/screenshot-desktop.png",
-      "type": "image/png",
-      "sizes": "1280x800",
-      "form_factor": "wide"
+      "src": "img/screenshot-desktop.png", 
+      // Path ke tangkapan layar tampilan desktop
+      "type": "image/png", 
+      // Format gambar
+      "sizes": "1280x800", 
+      // Ukuran tangkapan layar
+      "form_factor": "wide" 
+      // Tangkapan untuk perangkat dengan layar lebar (desktop)
     }
   ]
 }
